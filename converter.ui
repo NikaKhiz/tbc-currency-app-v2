@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>758</width>
-    <height>547</height>
+    <height>639</height>
    </rect>
   </property>
   <property name="cursor">
@@ -97,7 +97,7 @@
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_2">
                 <item>
-                 <widget class="QLineEdit" name="lineEdit_6">
+                 <widget class="QLineEdit" name="username_label">
                   <property name="maximumSize">
                    <size>
                     <width>240</width>
@@ -134,7 +134,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineEdit_7">
+                 <widget class="QLineEdit" name="password_label">
                   <property name="maximumSize">
                    <size>
                     <width>240</width>
@@ -200,7 +200,7 @@
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_7">
                 <item alignment="Qt::AlignRight">
-                 <widget class="QPushButton" name="pushButton">
+                 <widget class="QPushButton" name="loginButton">
                   <property name="minimumSize">
                    <size>
                     <width>100</width>
@@ -229,6 +229,9 @@
                   </property>
                   <property name="text">
                    <string>Login</string>
+                  </property>
+                  <property name="checkable">
+                   <bool>false</bool>
                   </property>
                  </widget>
                 </item>
