@@ -61,6 +61,9 @@ class CurrencyConverter(QMainWindow):
         # on button click convert given amount of currency into another and show result
         self.convertButton.clicked.connect(lambda: self.on_click_convert(self.base_currencies_box.currentText(), self.conversion_currencies_box.currentText()))
 
+        # on currency change recalculate exchange rates 
+        self.conversion_currencies_box.activated.connect(self.on_currency_change)
+        self.base_currencies_box.activated.connect(self.on_currency_change)
 
     # load generated ui file by qt designer and center main window 
     def initUI(self):
@@ -124,9 +127,14 @@ class CurrencyConverter(QMainWindow):
     def clear_currencies_form(self):
         self.base_currencies_box.setCurrentIndex(0)
         self.conversion_currencies_box.setCurrentIndex(1)
-        self.amount_line.setText('')
+        self.amount_line.clear()
         self.calculate_current_rate(self.base_currencies_box.currentText(), self.conversion_currencies_box.currentText())
         self.result_label.setText('')
+
+
+    # on currency switches recalculate exchange rate
+    def on_currency_change(self):
+        self.calculate_current_rate(self.base_currencies_box.currentText(), self.conversion_currencies_box.currentText())
 
 
     #  switch from login page to the converter page
