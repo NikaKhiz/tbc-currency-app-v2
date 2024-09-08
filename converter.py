@@ -18,6 +18,8 @@ class CurrencyConverter(QMainWindow):
         # on button click login user
         self.loginButton.clicked.connect(lambda: self.authorize(self.username_label.text(), self.password_label.text()))
 
+        # on button click logout user
+        self.logoutButton.clicked.connect(self.logout)
 
     # load generated ui file by qt designer and center main window 
     def initUI(self):
@@ -43,3 +45,10 @@ class CurrencyConverter(QMainWindow):
             msg.setIcon(QMessageBox.Warning)
 
             ex = msg.exec()
+
+    # switch from converter page to login
+    def logout(self):
+        self.username_label.setText('')
+        self.password_label.setText('')
+        self.stackedWidget.setCurrentIndex(0)
+        
