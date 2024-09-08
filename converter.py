@@ -153,5 +153,6 @@ class CurrencyConverter(QMainWindow):
     def logout(self):
         self.username_label.setText('')
         self.password_label.setText('')
+        self.clear_currencies_form()
         self.stackedWidget.setCurrentIndex(0)
         
